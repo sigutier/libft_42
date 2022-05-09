@@ -6,7 +6,7 @@
 /*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 14:14:21 by sigutier          #+#    #+#             */
-/*   Updated: 2022/05/09 11:40:28 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/05/09 15:31:18 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,9 @@ char	*ft_strchr(const char *s, int c);
 char    *ft_strrchr(const char *s, int c);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
-int	ft_atoi(const char * nptr );
+int	ft_atoi(const char *nptr);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+void	*ft_memset(void *s, int c, size_t n);
+
 #endif
