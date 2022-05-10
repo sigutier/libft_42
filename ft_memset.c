@@ -6,24 +6,27 @@
 /*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 19:58:04 by sigutier          #+#    #+#             */
-/*   Updated: 2022/05/09 15:31:13 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/05/10 14:41:25 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t	i;
-	unsigned char	*str;
+	size_t			i;
+	unsigned char	*ptr;
 
 	i = 0;
-	str = (unsigned char*)s;
-	while (i < n)
+	ptr = b;
+	while (i < len)
 	{
-		*str = (unsigned char)c;
+		ptr[i] = c;
 		i++;
-		str++;
 	}
-	return (s);
+	return (b);
 }
+
+/*La función memset() llena los primeros n bytes del área de memoria
+ * señalado por s con el byte constante c.
+ * Devuelve un puntero al área de memoria s.*/
