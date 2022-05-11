@@ -6,7 +6,7 @@
 /*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 14:35:19 by sigutier          #+#    #+#             */
-/*   Updated: 2022/04/26 16:21:44 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/05/11 18:19:49 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	{
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
 /*int main(void)

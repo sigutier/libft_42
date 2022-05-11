@@ -6,16 +6,16 @@
 /*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 19:56:52 by sigutier          #+#    #+#             */
-/*   Updated: 2022/04/22 18:14:52 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/05/11 19:01:15 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {
 	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 		return (1);
-	else 
+	else
 		return (0);
 }

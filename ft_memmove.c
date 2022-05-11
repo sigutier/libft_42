@@ -6,7 +6,7 @@
 /*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:07:02 by sigutier          #+#    #+#             */
-/*   Updated: 2022/05/10 15:14:12 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/05/11 19:04:01 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,27 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-}
+	size_t	i;
+	char	*s;
+	char	*d;
 
-/*La función memmove () copia 'len'  bytes del área de memoria 'src' a 'dst' del área de 
- * memoria. Las áreas de memoria pueden superponerse: la copia toma
- * lugar como si los bytes en 'src' se copiaran primero en una 
- * matriz temporal que no se superpone a 'src' o 'dest' , y los bytes 
- * luego se copian de la matriz temporal a 'dest'. Devuelve un puntero a 'dest'.*/
+	s = (char *)src;
+	d = (char *)dst;
+	i = 0;
+	if (!dst && !src)
+		return (0);
+	if (d > s)
+	{
+		while (len-- > 0)
+			d[len] = s[len];
+	}
+	else
+	{
+		while (i < len)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	return (dst);
+}

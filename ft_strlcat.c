@@ -6,7 +6,7 @@
 /*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 23:39:51 by sigutier          #+#    #+#             */
-/*   Updated: 2022/05/09 15:17:04 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/05/11 19:06:14 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	src_len = ft_strlen(src);
 	dst_len = ft_strlen(dst);
-	if(!dstsize)
+	if (!dstsize)
 		return (src_len);
 	while (src[i] && dst_len + i < dstsize - 1)
 	{

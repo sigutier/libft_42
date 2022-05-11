@@ -6,7 +6,7 @@
 /*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 23:59:48 by sigutier          #+#    #+#             */
-/*   Updated: 2022/04/25 12:04:52 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/05/11 18:56:34 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
-		return(c - 32);
-	else
-		return (0);
+		c -= 32;
+	return (c);
 }
 
 /*int	main()

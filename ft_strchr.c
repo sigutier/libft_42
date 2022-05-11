@@ -6,7 +6,7 @@
 /*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 12:11:28 by sigutier          #+#    #+#             */
-/*   Updated: 2022/04/25 14:01:36 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/05/11 19:05:23 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	while (*s != (char)c)
 	{
-		if (*s == c)
-			return ((char *)s);
+		if (*s == '\0')
+			return (NULL);
 		s++;
 	}
-	return (NULL);
+	return ((char *)s);
 }
 
 /*int	main()

@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 15:02:42 by sigutier          #+#    #+#             */
-/*   Updated: 2022/05/11 13:06:36 by sigutier         ###   ########.fr       */
+/*   Created: 2022/05/11 19:12:51 by sigutier          #+#    #+#             */
+/*   Updated: 2022/05/11 19:38:47 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	unsigned char	*str;
 
-	if (!dst && !src)
-		return (0);
-	i = 0;
-	while (i < n)
+	str = (unsigned char *)s;
+	while (n--)
 	{
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-		i++;
+		if (*str != ((unsigned char)c))
+			str++;
+		else
+			return (str);
 	}
-	return (dst);
+	return (0);
 }
-
-/*La función memcpy () copia 'n' bytes del área de memoria 'src'
- * a 'dst' del área de memoria. Las áreas de memoria no deben superponerse.
- * Use memmove si las áreas de memoria se superponen.
- * Devuelve un puntero a 'dst'.*/

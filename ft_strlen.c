@@ -6,13 +6,13 @@
 /*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 19:20:59 by sigutier          #+#    #+#             */
-/*   Updated: 2022/04/26 16:43:48 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/05/11 19:07:29 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	int	i;
 

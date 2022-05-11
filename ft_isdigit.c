@@ -6,16 +6,16 @@
 /*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 19:41:36 by sigutier          #+#    #+#             */
-/*   Updated: 2022/04/21 19:55:09 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/05/11 17:44:42 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
-	if (c >= 0 && c <= 9)
+	if (c >= '0' && c <= '9')
 		return (1);
-	else 
+	else
 		return (0);
 }
