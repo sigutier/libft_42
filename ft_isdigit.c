@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h"jijknknkllklnk
 
 int	ft_isdigit(int c)
 {
