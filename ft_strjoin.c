@@ -1,6 +1,4 @@
 #include "libft.h"
-#include <stdlib.h>
-#include <string.h>
 
 char *ft_strjoin(char const *s1, char const *s2)
 {
@@ -28,13 +26,4 @@ char *ft_strjoin(char const *s1, char const *s2)
     }
     str[j] = '\0';
     return (str);
-}
-
-int main()
-{
-    char    *result = ft_strjoin("hola", "Johann");
-    
-    printf("%s", result);
-
-    return 0;
 }
