@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sigutier <sigutier@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 16:30:48 by sigutier          #+#    #+#             */
-/*   Updated: 2022/05/11 19:08:53 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/05/25 16:09:45 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 
 	i = 0;
 	if (*s2 == '\0')
-		return ((char *) s1);
+		return ((char *)s1);
 	while (s1[i] != '\0' && i < n)
 	{
 		j = 0;

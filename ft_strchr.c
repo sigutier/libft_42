@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sigutier <sigutier@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 12:11:28 by sigutier          #+#    #+#             */
-/*   Updated: 2022/05/11 19:05:23 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/05/25 16:09:27 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 	return ((char *)s);
 }
 
-/*int	main()
+/*int	main(void)
 {
 	const char	*s = "hola que tal";
 	const char	ch = 'q';

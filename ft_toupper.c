@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sigutier <sigutier@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 23:59:48 by sigutier          #+#    #+#             */
-/*   Updated: 2022/05/11 18:56:34 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/05/25 16:09:54 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_toupper(int c)
 	return (c);
 }
 
-/*int	main()
+/*int	main(void)
 {
 	int c = 97;
 	printf("%d\n", ft_toupper(c));
