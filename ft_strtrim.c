@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sigutier <sigutier@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 16:09:50 by sigutier          #+#    #+#             */
-/*   Updated: 2022/05/25 16:14:12 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/06/13 18:51:19 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,51 +14,14 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	int		j;
-	int		k;
 	size_t	len;
-	int		is_inside;
-	char	*str;
 
-	if (s1 == NULL || set == NULL)
-		return (NULL);
-	len = 0;
-	i = 0;
-	while (s1[i])
-	{
-		j = 0;
-		is_inside = 0;
-		while (set[j])
-		{
-			if (s1[i] == set[j])
-				is_inside = 1;
-			j++;
-		}
-		if (is_inside == 0)
-			len++;
-		i++;
-	}
-	str = (char *)malloc((len + 1) * sizeof(char));
-	i = 0;
-	k = 0;
-	while (s1[i])
-	{
-		j = 0;
-		is_inside = 0;
-		while (set[j])
-		{
-			if (s1[i] == set[j])
-				is_inside = 1;
-			j++;
-		}
-		if (is_inside == 0)
-		{
-			str[k] = s1[i];
-			k++;
-		}
-		i++;
-	}
-	str[k] = '\0';
-	return (str);
+	if (!s1 || !set)
+		return (0);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	len = ft_strlen(s1);
+	while (len && ft_strchr(set, s1[len - 1]))
+		len--;
+	return (ft_substr(s1, 0, len));
 }

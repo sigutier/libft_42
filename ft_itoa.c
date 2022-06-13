@@ -3,76 +3,66 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sigutier <sigutier@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 16:16:13 by sigutier          #+#    #+#             */
-/*   Updated: 2022/05/25 18:53:28 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/06/13 18:48:44 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	get_len(int n)
+static void	isnegative_check(int *isnegative, long *number)
 {
-	size_t	len;
-
-	if (n == 0)
-		return (1);
-	len = 0;
-	if (n < 0)
-		len++;
-	while (n)
+	*isnegative = 0;
+	if (*number < 0)
 	{
-		n = n / 10;
-		len++;
+		*isnegative = 1;
+		*number = *number * -1;
 	}
-	return (len);
+}
+
+static size_t	ft_intlen(const int n)
+{
+	size_t	size;
+	long	temp;
+
+	temp = n;
+	size = 0;
+	if (n < 0)
+		temp *= -1;
+	while (temp > 9)
+	{
+		temp = temp / 10;
+		size++;
+	}
+	size++;
+	return (size);
 }
 
 char	*ft_itoa(int n)
 {
-	size_t	len;
-	size_t	num;
+	size_t	size;
 	char	*str;
+	int		isnegative;
+	long	number;
 
-	len = get_len(n);
-	if (!(str = (char *)malloc(len + 1 * sizeof(char))))
-		;
-	return (NULL);
-	if (n == 0)
-		return ("0");
-	if (n < 0)
-		len = len + 2;
-	else
-		len = len + 1;
-	str = (char *)malloc((div) * sizeof(char));
-	/*	i = div;
-		str_n[0] = '-';
-		str_n[div + 1] = '\0';
-	else
+	number = n;
+	isnegative_check(&isnegative, &number);
+	size = ft_intlen(n) + isnegative;
+	str = (char *)malloc(sizeof(char) * (size + 1));
+	if (!str)
+		return (NULL);
+	if (isnegative == 1)
+		*str = '-';
+	str[size] = '\0';
+	size--;
+	while (number > 9)
 	{
-		str_n = (char *)malloc((div + 1) * sizeof(char));
-		i = div - 1;
-		str_n[div] = '\0';
-	}*/
-	while (n != 0)
-	{
-		rest = n % 10;
-		n = n / 10;
-		if (n < 0)
-			c = -rest + 48;
-		else
-			c = rest + 48;
-		str[i] = c;
-		i--;
+		str[size] = (number % 10) + '0';
+		number = number / 10;
+		size--;
 	}
+	str[size] = number + '0';
 	return (str);
 }
-
-/*int main()
-{
-    char    *result = ft_itoa(0);
-
-    printf("%s\n", result);
-    return (0);
-}*/

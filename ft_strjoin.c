@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sigutier <sigutier@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 16:02:37 by sigutier          #+#    #+#             */
-/*   Updated: 2022/05/25 16:13:14 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/06/11 20:57:43 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	while (s1[i] != '\0')
 		str[j++] = s1[i++];
+	i = 0;
 	while (s2[i] != '\0')
 		str[j++] = s2[i++];
 	str[j] = '\0';

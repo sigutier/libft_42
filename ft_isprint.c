@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sigutier <sigutier@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 18:23:00 by sigutier          #+#    #+#             */
-/*   Updated: 2022/05/25 16:08:51 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/06/11 20:34:53 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

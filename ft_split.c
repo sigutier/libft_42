@@ -3,111 +3,87 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sigutier <sigutier@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 16:09:24 by sigutier          #+#    #+#             */
-/*   Updated: 2022/05/25 16:15:49 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/06/13 18:45:52 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <stdlib.h>
-#include <unistd.h>
+#include "libft.h"
 
-// calcula cuantos strings hay en *s
-static int	ft_count_strings(char const *s, char c)
+static void	next_word(const char *s, int *first, int *last, char c)
 {
-	int	has_found_delimiter;
-	int	count_strings;
-	int	i;
-
-	has_found_delimiter = 1;
-	count_strings = 0;
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] != c && has_found_delimiter == 1)
-		{
-			count_strings++;
-			has_found_delimiter = 0;
-		}
-		else if (s[i] == c)
-		{
-			has_found_delimiter = 1;
-		}
-		i++;
-	}
-	return (count_strings);
+	*first = *last;
+	while (s[*first] == c)
+		*first = *first + 1;
+	*last = *first;
+	while (s[*last] != c && s[*last] != '\0')
+		*last = *last + 1;
 }
 
-// creamos tantos arrays de strings como 'count_strings' hay: char** --> char*
-// almacenamos un espacio en la memoria para cada string sabiendo
-// 'count_letters' hay en cada uno: char* --> char
-// calcula cuantos caracteres hay en cada string: char
-static char	**ft_build_arrays_strings(char const *s, char c)
+static int	count_words(const char *s, char c)
 {
-	char	**array;
-	int		count_letters;
-	int		i;
-	int		j;
+	int		first;
+	int		last;
+	size_t	index;
 
-	array = (char **)malloc(ft_count_strings(s, c) * sizeof(char *));
-	count_letters = 0;
-	i = 0;
-	j = 0;
-	if (!s[i] || !array[j])
-		return (NULL);
-	while (s[i])
+	index = 0;
+	first = 0;
+	last = 0;
+	while (s[last] != '\0')
 	{
-		if (s[i] != c)
-			count_letters++;
-		else if (s[i] == c && count_letters > 0)
-		{
-			array[j++] = (char *)malloc((count_letters + 1) * sizeof(char));
-			count_letters = 0;
-		}
-		i++;
+		next_word(s, &first, &last, c);
+		if (first == last)
+			break ;
+		else
+			index++;
 	}
-	if (count_letters > 0)
-		array[j] = (char *)malloc((count_letters + 1) * sizeof(char));
-	return (array);
+	return (index);
+}
+
+static void	*ft_free(char **ret, size_t total)
+{
+	if (total == 0)
+	{
+		free(ret);
+		return (NULL);
+	}
+	while (total != 0)
+	{
+		free(ret[total]);
+		total--;
+	}
+	free(ret[total]);
+	free(ret);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		j;
-	int		k;
-	char	**string_array;
+	int		first;
+	int		last;
+	char	**ret;
+	size_t	index;
 
-	string_array = ft_build_arrays_strings(s, c);
-	i = 0;
-	j = 0;
-	k = 0;
-	while (s[i])
+	if (!s)
+		return (NULL);
+	ret = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!ret)
+		return (NULL);
+	index = 0;
+	first = 0;
+	last = 0;
+	while (s[last] != '\0')
 	{
-		if (s[i] != c)
-		{
-			string_array[j][k] = s[i];
-			k++;
-		}
-		else if (s[i] == c && k > 0)
-		{
-			string_array[j][k] = '\0';
-			j++;
-			k = 0;
-		}
-		i++;
+		next_word(s, &first, &last, c);
+		if (first == last)
+			break ;
+		ret[index] = ft_substr(s, first, last - first);
+		if (!ret[index])
+			return (ft_free(ret, index));
+		index++;
 	}
-	return (string_array);
-}
-
-int	main(void)
-{
-	char	**split;
-
-	split = ft_split("to to", ' ');
-	printf("%s\n", split[0]);
-	printf("%s\n", split[1]);
-	return (0);
+	ret[index] = NULL;
+	return (ret);
 }

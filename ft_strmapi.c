@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sigutier <sigutier@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 16:09:41 by sigutier          #+#    #+#             */
-/*   Updated: 2022/05/25 16:09:42 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/06/11 20:33:32 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (str);
 }
 
+/*
 char	increment(unsigned int i, char c)
 {
 	char	result;
@@ -42,7 +43,7 @@ char	increment(unsigned int i, char c)
 	return (result);
 }
 
-/*int main()
+int main()
 {
     char *result = ft_strmapi(s, increment);
 
