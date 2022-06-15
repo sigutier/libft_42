@@ -6,7 +6,7 @@
 /*   By: sigutier <sigutier@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 16:09:15 by sigutier          #+#    #+#             */
-/*   Updated: 2022/05/25 16:09:16 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/06/14 11:07:00 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,3 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
-
-//Escribe la string ’s’ en el archivo descriptor especificado.

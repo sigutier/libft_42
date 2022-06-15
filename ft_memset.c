@@ -6,7 +6,7 @@
 /*   By: sigutier <sigutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 19:58:04 by sigutier          #+#    #+#             */
-/*   Updated: 2022/06/11 20:37:44 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/06/14 10:38:50 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-
-/*La función memset() llena los primeros n bytes del área de memoria
- * señalado por s con el byte constante c.
- * Devuelve un puntero al área de memoria s.*/

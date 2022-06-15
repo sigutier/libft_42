@@ -6,7 +6,7 @@
 /*   By: sigutier <sigutier@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 20:48:27 by sigutier          #+#    #+#             */
-/*   Updated: 2022/05/25 16:08:16 by sigutier         ###   ########.fr       */
+/*   Updated: 2022/06/14 10:37:08 by sigutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-/*a función bzero () borra los datos en los n bytes de la memoria
- * comenzando en la ubicación señalada por s , escribiendo ceros 
- * (bytes que contiene '\0') a esa área.*/
