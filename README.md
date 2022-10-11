@@ -1,6 +1,3 @@
-# libft_42
-42cursus' libft project. 
-
 <h1 align="center">
 	🧰 libft
 </h1>
@@ -18,8 +15,6 @@
 	<a href="#%EF%B8%8F-about">About</a>
 	<span> · </span>
 	<a href="#%EF%B8%8F-usage">Usage</a>
-	<span> · </span>
-	<a href="#-testing">Testing</a>
 </h3>
 
 ---
